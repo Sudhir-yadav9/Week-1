@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+     <title>Task-2 Banking System</title>
+    </head>
+    <body>
+
+        <script>
+
+            function Bank()
+            {
+                this.bal=0;
+                this.openAccount = function(openBal)
+                {
+                    this.bal=openBal;
+                    document.write("Account opened the current Bal is : ", openBal)
+                }
+
+                document.write("<br/>");
+
+                this.withdrawal=function(withdrw)
+                {
+                    if(withdrw>this.bal)
+                    {
+                        document.write("Not Enough Balance In the account:");
+                    }
+                    else
+                    {
+                        this.bal=this.bal-withdrw;
+                        document.write("Withdrawal Successfull , current balance is ",this.bal);
+                    }
+                }
+                this.deposit=function(dpt)
+                {
+                    this.bal=this.bal+dpt;
+                    document.write("Amount Deposited ",dpt);
+                    document.write("<br />");
+                    document.write("Current balance is ", this.bal);
+                }
+            }
+
+            var obj1=new Bank();
+            obj1.openAccount(5000);
+            document.write("<br/>");
+            obj1.withdraw(5000);
+            document.write("<br/>");
+            obj1.deposit(1000);
+            document.write("<br/>");
+            
+
+        </script>
+    </body>
+</html>
