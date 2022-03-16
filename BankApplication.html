@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <link rel ="stylesheet" href="taskB.css" type="text/css"/>
+
+        <Script>
+            
+            
+           function  OpenAccount()
+            {
+                
+
+                var valuee=document.getElementById("Amount").value;
+                if(valuee==0)
+                {
+                    alert("Account Cannot be opened with Zero Balance :");
+                }
+                else 
+                {
+                    alert("Account created with the deposit Amount of :Rs"+valuee);
+                      document.getElementById('bal').innerText =valuee;
+                }
+                
+            }
+            function  withdrawal()
+                {
+                    var valuee=document.getElementById("Amount").value;
+                    var total=document.getElementById('bal').innerText;
+                    var balance=total-valuee;
+                    if(valuee >total)
+                    {
+                        alert("Not Enough Balance In the account:");
+                    }
+                    else
+                    {
+                        document.getElementById('bal').innerText= balance;
+                        alert("Withdrawal Successfull ");
+                    }
+                }
+
+            function  deposit()
+                {
+                    var deposit=document.getElementById("Amount").value;
+                    var total=document.getElementById('bal').innerText;
+                    var balance= parseInt(deposit) + parseInt(total);
+
+                    if(deposit == ' ')
+                    {
+                        alert("Deposit amount null");
+                    }
+                    
+                    else
+                    {
+                    
+                    document.getElementById('bal').innerText =balance ;
+                    
+
+                    alert("Amount Deposited :");
+                    }
+                    
+                }
+
+            function Balance()
+                {
+                    var total=document.getElementById('bal').innerText;
+                    alert("The balance of current Account is :Rs"+total);
+                }
+    
+        </Script>
+            <link rel="stylesheet" href="bootstrap.min.css" type="text/css"/>
+
+    </head>
+
+    <body>
+        
+
+    <div class="mx-auto" style="width: 400px;">
+        
+      
+        <div class="card" style="width: 30rem;height: 44rem;">
+            <img src="bannk.png" class="card-img-top" >
+            
+            <div class="card-body">
+
+              <h5 class="title-card">Banking Application</h5>
+              <p class="card-text">Your Acc Balance is <span id="bal">Rs 0</span> </p>
+              
+              <div class="Hold"><input type="number"  id="Amount"placeholder="Enter the number " required/></div>
+              
+              <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" onClick="OpenAccount(); Balance();" class="btn btn-success">Create Account</button>
+                  <button type="button" onClick="withdrawal() ; Balance();" class="btn btn-warning">Withdraw Amount</button>
+                  <button type="button" onClick="deposit(); Balance();" class="btn btn-danger">Deposit Amount</button>
+                </div>
+
+            </div>
+          </div>
+        </div>
+        
+       
+       
+    </body>
+
+
+
+
+</html>
