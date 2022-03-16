@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Task 3 </title>
+        <script>
+            
+        document.write("Removing task from a task array ");
+        document.write("<br />");
+        function delV()
+        {
+            this.arr= ['Mango','Chiku','Apricot','Apple'];
+                document.write(this.arr);
+                document.write("<br />");
+          
+                this.delete= function(i){
+                document.write("<br />");
+                document.write("Before Deleting ");
+                document.write("<br />");
+                document.write(this.arr);
+                this.arr.splice(i,2);
+                document.write("<br />");
+                document.write("After deleting");
+                document.write("<br />");
+                document.write(this.arr);
+            }} 
+        var obj = new delV();
+        obj.delete(1);
+        </script>
+    </head>
+</html>
